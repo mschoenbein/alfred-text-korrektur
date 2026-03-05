@@ -1,0 +1,493 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>de.mschoenbein.textkorrektur</string>
+	<key>connections</key>
+	<dict>
+		<key>3EDF8E32-20E5-4C1A-B491-6973ABCBF995</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>1DD6244A-6ECA-44B8-8C6E-75C1502CDC0F</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>1DD6244A-6ECA-44B8-8C6E-75C1502CDC0F</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>DD32F0C4-5076-4314-B443-2B881AF5A61F</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>7F8A9B0C-1D2E-3F4A-5B6C-7D8E9F0A1B2C</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>1D632859-E6C2-4086-A261-8261CD7EE993</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>1D632859-E6C2-4086-A261-8261CD7EE993</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>BCF62E13-7CFC-42B0-B1AF-A129E5A2C8D5</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>BCF62E13-7CFC-42B0-B1AF-A129E5A2C8D5</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>95ECCA6D-8810-4399-A51D-529C871BD61D</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>mschoenbein</string>
+	<key>description</key>
+	<string>Korrigiert Rechtschreibung, Grammatik und Zeichensetzung via Ollama (lokal), Mistral (API) oder LanguageTool (API).</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>TextKorrektur</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>1</integer>
+				<key>focusedappvariable</key>
+				<false/>
+				<key>focusedappvariablename</key>
+				<string></string>
+				<key>hotkey</key>
+				<integer>42</integer>
+				<key>hotmod</key>
+				<integer>1179648</integer>
+				<key>hotstring</key>
+				<string>#</string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+				<key>relatedAppsMode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>3EDF8E32-20E5-4C1A-B491-6973ABCBF995</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>conditions</key>
+				<array>
+					<dict>
+						<key>inputstring</key>
+						<string></string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>4</integer>
+						<key>matchstring</key>
+						<string>^\s*$</string>
+						<key>outputlabel</key>
+						<string>empty</string>
+						<key>uid</key>
+						<string>7F8A9B0C-1D2E-3F4A-5B6C-7D8E9F0A1B2C</string>
+					</dict>
+				</array>
+				<key>elselabel</key>
+				<string>text</string>
+				<key>hideelse</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.conditional</string>
+			<key>uid</key>
+			<string>1DD6244A-6ECA-44B8-8C6E-75C1502CDC0F</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>Kein Text markiert.</string>
+				<key>title</key>
+				<string>TextKorrektur</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>DD32F0C4-5076-4314-B443-2B881AF5A61F</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>Korrigiere…</string>
+				<key>title</key>
+				<string>TextKorrektur</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>1D632859-E6C2-4086-A261-8261CD7EE993</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string></string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string>scripts/ollama-correct.sh</string>
+				<key>type</key>
+				<integer>8</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>BCF62E13-7CFC-42B0-B1AF-A129E5A2C8D5</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<true/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
+				<key>transient</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>95ECCA6D-8810-4399-A51D-529C871BD61D</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>## TextKorrektur
+
+Korrigiert Rechtschreibung, Grammatik und Zeichensetzung im markierten Text. Drei Provider zur Auswahl:
+
+- **Ollama** (lokal): llama3.1, kostenlos, erfordert laufenden Ollama-Server
+- **Mistral** (API): Remote-LLM, benoetigt API-Key von mistral.ai
+- **LanguageTool** (API): Dedizierter Korrektur-Service, benoetigt Premium-Account
+
+### Nutzung
+1. Text markieren
+2. Cmd+Ctrl+Opt+# druecken
+3. Korrigierter Text wird automatisch eingefuegt
+
+### Konfiguration
+- **Provider**: Ollama, Mistral oder LanguageTool
+- **System Prompt**: Korrektur-Prompt (nur Ollama/Mistral)
+- **Temperature**: 0-10 (nur Ollama/Mistral)
+- **Mistral API Key / Model**: Fuer Mistral-Provider
+- **LT Username / API Key**: Fuer LanguageTool-Provider</string>
+	<key>uidata</key>
+	<dict>
+		<key>3EDF8E32-20E5-4C1A-B491-6973ABCBF995</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>8</integer>
+			<key>note</key>
+			<string>TextKorrektur
+
+DOUBLE CLICK TO EDIT</string>
+			<key>xpos</key>
+			<real>30</real>
+			<key>ypos</key>
+			<real>200</real>
+		</dict>
+		<key>1DD6244A-6ECA-44B8-8C6E-75C1502CDC0F</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>8</integer>
+			<key>xpos</key>
+			<real>180</real>
+			<key>ypos</key>
+			<real>200</real>
+		</dict>
+		<key>DD32F0C4-5076-4314-B443-2B881AF5A61F</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>8</integer>
+			<key>xpos</key>
+			<real>330</real>
+			<key>ypos</key>
+			<real>120</real>
+		</dict>
+		<key>1D632859-E6C2-4086-A261-8261CD7EE993</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>8</integer>
+			<key>xpos</key>
+			<real>330</real>
+			<key>ypos</key>
+			<real>250</real>
+		</dict>
+		<key>BCF62E13-7CFC-42B0-B1AF-A129E5A2C8D5</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>8</integer>
+			<key>note</key>
+			<string>API Call</string>
+			<key>xpos</key>
+			<real>480</real>
+			<key>ypos</key>
+			<real>250</real>
+		</dict>
+		<key>95ECCA6D-8810-4399-A51D-529C871BD61D</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>3</integer>
+			<key>note</key>
+			<string>paste</string>
+			<key>xpos</key>
+			<real>630</real>
+			<key>ypos</key>
+			<real>250</real>
+		</dict>
+	</dict>
+	<key>userconfigurationconfig</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>pairs</key>
+				<array>
+					<array>
+						<string>Ollama (lokal)</string>
+						<string>ollama</string>
+					</array>
+					<array>
+						<string>Mistral (API)</string>
+						<string>mistral</string>
+					</array>
+					<array>
+						<string>LanguageTool (API)</string>
+						<string>languagetool</string>
+					</array>
+				</array>
+			</dict>
+			<key>description</key>
+			<string>Korrektur-Provider: Ollama (lokal), Mistral (Remote-LLM) oder LanguageTool (Korrektur-Service).</string>
+			<key>label</key>
+			<string>Provider</string>
+			<key>type</key>
+			<string>popupbutton</string>
+			<key>variable</key>
+			<string>provider</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>Korrigiere Rechtschreibung, Grammatik und Zeichensetzung.
+Ergaenze fehlende Woerter wenn noetig.
+Abkuerzungen und Kurzformen NICHT ausschreiben oder ersetzen. Saetze nicht umbauen. Zeilenumbrueche beibehalten.
+Namen, Zahlen und Daten NICHT aendern.
+Kein Markdown, keine Formatierung.
+NUR den korrigierten Text zurueckgeben, KEINE Einleitung oder Erklaerungen.</string>
+				<key>required</key>
+				<true/>
+				<key>trim</key>
+				<true/>
+				<key>verticalsize</key>
+				<integer>7</integer>
+			</dict>
+			<key>description</key>
+			<string>System-Prompt fuer die Korrektur (nur Ollama/Mistral).</string>
+			<key>label</key>
+			<string>System Prompt</string>
+			<key>type</key>
+			<string>textarea</string>
+			<key>variable</key>
+			<string>system_prompt</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>defaultvalue</key>
+				<integer>0</integer>
+				<key>markercount</key>
+				<integer>11</integer>
+				<key>maxvalue</key>
+				<integer>10</integer>
+				<key>minvalue</key>
+				<integer>0</integer>
+				<key>onlystoponmarkers</key>
+				<true/>
+				<key>showmarkers</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>Temperature (0-10, wird durch 10 geteilt). 0 = deterministisch, hoeher = kreativer.</string>
+			<key>label</key>
+			<string>Temperature</string>
+			<key>type</key>
+			<string>slider</string>
+			<key>variable</key>
+			<string>temperature</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string></string>
+				<key>required</key>
+				<false/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>API Key fuer Mistral (von console.mistral.ai). Nur fuer Provider "Mistral".</string>
+			<key>label</key>
+			<string>Mistral API Key</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>mistral_api_key</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>pairs</key>
+				<array>
+					<array>
+						<string>Mistral Large</string>
+						<string>mistral-large-latest</string>
+					</array>
+					<array>
+						<string>Mistral Medium</string>
+						<string>mistral-medium-latest</string>
+					</array>
+					<array>
+						<string>Mistral Small</string>
+						<string>mistral-small-latest</string>
+					</array>
+				</array>
+			</dict>
+			<key>description</key>
+			<string>Mistral-Modell. Nur fuer Provider "Mistral".</string>
+			<key>label</key>
+			<string>Mistral Model</string>
+			<key>type</key>
+			<string>popupbutton</string>
+			<key>variable</key>
+			<string>mistral_model</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string></string>
+				<key>required</key>
+				<false/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>LanguageTool Premium Username (E-Mail). Nur fuer Provider "LanguageTool".</string>
+			<key>label</key>
+			<string>LanguageTool Username</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>lt_username</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string></string>
+				<key>required</key>
+				<false/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>LanguageTool Premium API Key. Nur fuer Provider "LanguageTool".</string>
+			<key>label</key>
+			<string>LanguageTool API Key</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>lt_api_key</string>
+		</dict>
+	</array>
+	<key>variablesdontexport</key>
+	<array>
+		<string>mistral_api_key</string>
+		<string>lt_username</string>
+		<string>lt_api_key</string>
+	</array>
+	<key>version</key>
+	<string>1.0.0</string>
+</dict>
+</plist>
